@@ -1,0 +1,7 @@
+Commercial License
+
+This project is copyrighted by Alok Ahirrao, but all rights are transferred to Ilytics Technology. The company holds the exclusive rights to use, modify, and distribute the code and its associated files.
+
+All contributions made to this project are licensed under the Commercial License, granting Ilytics Technology full ownership and control over the software, including any modifications, enhancements, or derivative works.
+
+For more information or inquiries, please contact the Ilytics Technology Legal Department** or a company representative.

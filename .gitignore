@@ -1,0 +1,73 @@
+# Node modules
+node_modules/
+Backend/node_modules/
+
+# Build directories
+Backend/dist/
+
+# Environment variables
+
+
+
+# Log files
+*.log
+Backend/npm-debug.log*
+Backend/yarn-debug.log*
+Backend/yarn-error.log*
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+Backend/coverage/
+
+# IDE and Editor specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+
+# Node modules
+node_modules/
+Frontend/node_modules/
+
+# Build directories
+Frontend/dist/
+Frontend/build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+*.log
+Frontend/npm-debug.log*
+Frontend/yarn-debug.log*
+Frontend/yarn-error.log*
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+Frontend/coverage/
+
+# IDE and Editor specific files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Miscellaneous
+npm-debug.log*
+yarn-error.log*
+yarn-debug.log*
+
+
+number_plate_detector/myenv
+number_plate_detector/venv

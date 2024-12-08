@@ -1,0 +1,489 @@
+/* Background styling for the chatbot page */
+.chatbot-page {
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Removes the main page scrollbar */
+  background-color: #f5f5f5; /* Light background color for mobile-friendliness */
+  position: relative; /* Ensure centering respects viewport dimensions */
+}
+
+/* Prevent page overflow by disabling scroll for the body */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Disable page scroll */
+}
+/* Chatbot Container */
+.chatbot-box {
+  background-color: #edf0f2;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  height: 80vh;
+  width: 100%;
+  max-width: 450px; /* Limit the max width for large screens */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevent content overflow */
+  margin: auto; /* Add margin auto for better alignment inside the parent container */
+  position: absolute; /* Position absolute for better centering */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset by 50% of its own width and height */
+  z-index: 1; /* Ensure it stays above the background */
+}
+
+@media (max-width: 480px) {
+  .chatbot-box {
+    height: 80vh;
+    width: 90%; /* Use more width on smaller screens */
+  }
+}
+
+/* Chat Header with Profile */
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #001a28;
+  color: white;
+  border-radius: 16px 16px 0 0;
+  justify-content: space-between;
+  font-size: 16px; /* Adjust font size for better readability on mobile */
+}
+
+.chatbot-avatar {
+  margin-right: 10px;
+}
+
+.chatbot-title {
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.chatbot-status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 5px;
+}
+
+.chatbot-status-text {
+  color: #d1d1d1;
+}
+
+/* Messages Section */
+.chatbot-messages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto; /* Enable scrolling within the chatbot */
+  background-color: #f7f9fc;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Allow relative positioning for pickers */
+}
+
+.chatbot-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chatbot-messages::-webkit-scrollbar-thumb {
+  background-color: #ccc9c9;
+  border-radius: 5px;
+}
+
+.chatbot-messages::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.chatbot-message-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.chatbot-message-container.user {
+  justify-content: flex-end;
+}
+
+.chatbot-message-container.bot {
+  justify-content: flex-start;
+}
+
+.bot-avatar {
+  margin-right: 8px;
+}
+/* Ensure dropdowns are not clipped */
+.react-datepicker-wrapper {
+  position: relative;
+  z-index: 10; /* Ensure the datepicker stays above other content */
+}
+
+.react-datepicker {
+  z-index: 1000; /* Ensure the datepicker stays above other elements */
+}
+
+.react-datepicker-popper {
+  z-index: 1000 !important; /* Prevent it from being clipped by parent overflow */
+}
+
+.message {
+  padding: 10px;
+  border-radius: 18px;
+  margin: 10px 0;
+  max-width: 75%;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.bot-message {
+  background-color: #f1f2f6;
+  color: #333;
+  align-self: flex-start;
+  border-radius: 0px 18px 18px 18px;
+}
+
+.user-message {
+  background-color: #dbe9ff;
+  color: #050505;
+  align-self: flex-end;
+  border-radius: 18px 18px 0px 18px;
+}
+
+.message-text {
+  font-size: 14px;
+}
+
+.message-time {
+  font-size: 12px;
+  color: #8c8fa5;
+  text-align: right;
+  margin-top: 5px;
+}
+
+/* Input Area */
+.chatbot-input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: white;
+  border-top: 1px solid #ccc;
+}
+
+.chatbot-input-form {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.chatbot-image-upload {
+  margin-right: 10px;
+}
+
+.chatbot-file-input {
+  display: none;
+}
+
+.chatbot-text-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: none; /* Remove border */
+  outline: none; /* Remove focus outline */
+  background-color: #f1f2f6;
+  border-radius: 25px;
+  font-size: 14px;
+  color: #333; /* Ensure text color contrasts well with the background */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for better look */
+}
+
+.chatbot-text-input:focus {
+  outline: none;
+  box-shadow: inset 0 0 5px #007bff; /* Blue shadow on focus */
+}
+
+/* Buttons */
+.image-icon,
+.send-icon {
+  color: #8c8fa5;
+  transition: color 0.3s ease;
+}
+
+.image-icon:hover,
+.send-icon:hover {
+  color: #4a90e2;
+}
+
+.chatbot-send-button {
+  margin-left: 10px;
+}
+
+/* License Plate Section */
+/* Styling the license plate list */
+.license-plate-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px 0;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.license-plate-button {
+  background-color: #ffffff;
+  color: #00796b;
+  border: 2px solid #00796b;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add hover effect */
+.license-plate-button:hover {
+  background-color: #385891;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.license-plate-button:focus {
+  border-color: #004d40;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the "ENTER MANUALLY" button */
+.enter-manually-button {
+  background-color: #003df3;
+  color: #000000;
+  border: 2px solid #ff6f61;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Wrapper for Time Input Boxes */
+.time-picker-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: center; /* Center the content */
+  align-items: center;
+  gap: 15px; /* Space between input boxes */
+  margin: 20px 0; /* Add some vertical spacing */
+  padding: 20px; /* Padding for better spacing */
+  background-color: #edf0f2; /* Match theme */
+  border-radius: 10px; /* Rounded corners for the wrapper */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #ddd; /* Border for the wrapper */
+}
+
+/* Individual Time Pickers */
+.time-picker {
+  width: 100%; /* Full width on small screens */
+  max-width: 300px; /* Limit width on larger screens */
+  padding: 10px;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #ffffff; /* White background */
+  font-size: 14px; /* Font size */
+  color: #333; /* Text color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+/* Focus effect for Time Pickers */
+.time-picker:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); /* Subtle blue glow */
+  outline: none; /* Remove default focus outline */
+}
+
+/* Button styling */
+.confirm-booking-btn {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirm-booking-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.confirm-booking-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+
+.confirm-booking-btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirm-booking-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+.confirm-booking-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Add keyframes for fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px); /* Optional: slide-in effect */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the fade-in animation to message containers */
+.chatbot-message-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  animation: fadeIn 0.3s ease-out; /* Apply the fadeIn animation */
+}
+
+/* Optional: For more visual effects, animate the text itself */
+.message {
+  animation: fadeIn 0.5s ease-out;
+}
+/* Calendar Header customization */
+.react-datepicker__header {
+  background-color: #f1f1f1; /* Lighter background color */
+  color: #333; /* Darker text for better readability */
+  border: none; /* Remove the border */
+  border-radius: 0; /* Remove rounded corners */
+  padding: 10px 0; /* Padding for spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Change the month/year text */
+.react-datepicker__current-month {
+  font-size: 14px; /* Adjust font size */
+  font-weight: bold; /* Bold text */
+  color: #007bff; /* Blue color for better visibility */
+}
+
+/* Time Picker Header - Same styling for time picker input fields */
+.time-picker-wrapper .react-datepicker__header {
+  background-color: #f1f1f1; /* Lighter background for time pickers */
+  color: #333; /* Dark text */
+  border-radius: 0; /* No rounded corners */
+  border: none; /* Remove border */
+  padding: 5px 0; /* Adjust padding for alignment */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Days and Date Cells */
+.react-datepicker__day {
+  background-color: transparent; /* Transparent background for day cells */
+  color: #333; /* Default color */
+  font-size: 14px; /* Adjust font size */
+  padding: 8px; /* Adjust padding */
+  border-radius: 0; /* No rounded corners */
+  text-align: center; /* Center text */
+  cursor: pointer; /* Make it clickable */
+}
+
+/* Hover effect for days */
+.react-datepicker__day:hover {
+  background-color: #007bff; /* Blue hover effect */
+  color: white; /* Change text to white */
+}
+
+/* Today’s date styling */
+.react-datepicker__day--today {
+  background-color: #ff6f00; /* Highlight today's date */
+  color: #fff; /* White text for today */
+}
+
+/* Selected day */
+.react-datepicker__day--selected {
+  background-color: #007bff; /* Blue background for selected day */
+  color: white; /* White text */
+}
+/* Main CSS file */
+.time-picker-popover {
+  width: 100px !important;          /* Set fixed width for the popper */
+  max-width: 100px !important;      /* Prevent expansion beyond this width */
+  max-height: 200px !important;     /* Max height for the popper */
+  height: auto !important;          /* Dynamic height based on content */
+  position: absolute !important;    /* Absolute positioning */
+  right: 0 !important;              /* Align to the right of the input */
+  top: 100% !important;             /* Position directly below the input */
+  z-index: 1000 !important;         /* Ensure the popper is on top of other elements */
+  overflow: auto !important;        /* Enable scrolling if content overflows */
+  box-sizing: border-box !important;/* Prevent overflow issues */
+}
+
+@media (max-width: 768px) {
+  /* For mobile devices, keep the original popper behavior */
+  .time-picker-popover {
+    width: 100px !important;
+    max-width: 100px !important;
+    right: 0 !important; /* Align to the right of the input */
+  }
+}
+
+@media (min-width: 769px) {
+  /* For desktop devices, adjust the popper width */
+  .time-picker-popover {
+    width: 100px !important;     /* Increase the width for desktop */
+    max-width: 100px !important; /* Prevent expansion beyond this width */
+    right: 00px !important;      /* Adjust popper's position to ensure it's inside the chatbot box */
+    left: auto !important;       /* Remove left positioning */
+    top: 120% !important;        /* Adjust popper position */
+  }
+}

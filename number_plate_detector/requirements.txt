@@ -1,0 +1,14 @@
+torch==2.0.0
+torchvision==0.15.1
+torchaudio==2.0.1
+paddlepaddle
+python-multipart
+fastapi
+uvicorn
+opencv-python
+numpy
+pymongo
+paddleocr
+ultralytics
+httpx
+PyJWT
