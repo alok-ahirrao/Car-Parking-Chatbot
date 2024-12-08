@@ -23,7 +23,7 @@ The registration page enables new users to create an account.
 
 ### 4. Number Plate Detection Demo
 
-For the demo, see the video file: [Chatbot Interaction](Output/Output.gif).
+For the demo, see the video file: ![Chatbot Interaction](Output/Output.gif) 
 ---
 ### Chatbot Car Parking
 
